@@ -6,42 +6,42 @@
 # "                  " python-bluez libbluetooth-dev python-dev
 # sudo python setup.py install
 
-import bluetooth
-import lightblue
+import socket
 
 def main():
-    target_names = ["ACTUALLYNOTHING"] #put bluetooth names
+    target_names = [["ACTUALLYNOTHING", 6969]] #put MAC addresses
     file_to_send = "behavior.py"
     file_time = "time.txt"
 
-    target_address = None
-    nearby_devices = bluetooth.discover_devices()
-    print(nearby_devices)
-
     # search might miss devices or be unable to connect, so it may need multiple attempts
     for target in target_names:
-        for bdaddr in nearby_devices:
-            if target_name == bluetooth.lookup_name(bdaddr):
-                print("Found device " + target_name)
-                target_address = bdaddr
+        s = socket.socket(socket.AF_BLUETOOTH, socket.SOCK_STREAM, socket.BTPROTO_RFCOMM)
+        s.connect((target[0], target[1]))
+        while 1:
+            text = input()
+            if text == "quit":
                 break
-
-        if target_address != None:
-            services = lightblue.findservices(target_address)
-            for service in services:
-                if service[2] == "OBEX Object Push":
-                    obex_port = service[1]
-                    break
+            s.send(bytes(text, 'UTF-8'))
             try:
-                lightblue.obex.sendfile(target_address, service[1], file_to_send)
+                f = open(file_to_send, 'r')
+                file = f.read(1024)
+                while file:
+                    s.send(file)
+                    file = f.read(1024)
                 print("Sent process file")
             except:
                 print("An error occured sending process file")
             try:
-                lightblue.obex.sendfile(target_address, service[1], file_time)
+                f = open(file_to_send, 'r')
+                file = f.read(1024)
+                while file:
+                    s.send(file)
+                    file = f.read(1024)
                 print("Sent time file")
             except:
                 print("An error occured sending time file")
+        s.close()
+
 
 if __name__ == "__main__":
     exit(main())
