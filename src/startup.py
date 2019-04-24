@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
+import sys
+sys.path.append('./lib')
 import RPi.GPIO as GPIO
 import pins
+import led
 from time import sleep
 
 print('Hello World!')
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(pins.LED, GPIO.OUT, initial=GPIO.LOW)
-GPIO.output(pins.LED, GPIO.HIGH)
+
+led.led_init()
+
+led.led_toggle(led.LED.FRONT, led.STATE.ON)
 sleep(1)
-GPIO.output(pins.LED, GPIO.LOW)
+led.led_toggle(led.LED.FRONT, led.STATE.OFF)
