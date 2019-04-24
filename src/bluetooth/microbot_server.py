@@ -3,7 +3,7 @@ import lightblue
 
 sock = lightblue.socket()
 try:
-    sock.bind(("", 0))    # bind to 0 to bind to a dynamically assigned channel
+    sock.bind(("localhost", 0))    # bind to 0 to bind to a dynamically assigned channel
     lightblue.advertise("OBEX File Transfer", sock, lightblue.OBEX)
 
     # Receive a file and save it as MyFile.txt.
