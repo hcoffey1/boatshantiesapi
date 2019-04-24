@@ -1,6 +1,7 @@
 import sys
 sys.path.append('../src')
 
+import wiringpi
 import pins
 import RPi.GPIO as GPIO
 from time import sleep
@@ -18,6 +19,16 @@ if __name__ == "__main__":
     GPIO.setup(pins.PHOTOTRAN, GPIO.IN)
     
     GPIO.add_event_detect(pins.PHOTOTRAN, GPIO.RISING, callback=detected, bouncetime=300)
+
+    wiringpi.wiringPiSetupGpio()
+
+    wiringpi.pinMode(12, wiringpi.GPIO.PWM_OUTPUT)
+    wiringpi.pwmSetMode(wiringpi.GPIO.PWM_MODE_MS)
+
+    wiringpi.pwmSetClock(192)
+    wiringpi.pwmSetRange(2000)
+    
+    delay_period = 0.01
 
     while True:
         if GPIO.input(pins.PHOTOTRAN):
