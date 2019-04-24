@@ -1,0 +1,200 @@
+{
+    "bottype": "spacer",
+    "ruleset":
+    [
+        {
+            "signal_set":
+            {
+                "forward": 0.4,
+                "right": 0,
+                "back": 0,
+                "left": 0
+            },
+            "action":
+            {
+                "rotation": 0,
+                "drive": 1,
+                "new_signal": [0.2, 0.2, 0.2],
+                "sleep": 0
+            }
+        },
+        {
+            "signal_set":
+            {
+                "forward": 0,
+                "right": 0.4,
+                "back": 0,
+                "left": 0
+            },
+            "action":
+            {
+                "rotation": -90,
+                "drive": 1,
+                "new_signal": [0.2, 0.2, 0.2],
+                "sleep": 0
+            }
+        },
+        {
+            "signal_set":
+            {
+                "forward": 0,
+                "right": 0,
+                "back": 0.4,
+                "left": 0
+            },
+            "action":
+            {
+                "rotation": 180,
+                "drive": 1,
+                "new_signal": [0.2, 0.2, 0.2],
+                "sleep": 0
+            }
+        },
+        {
+            "signal_set":
+            {
+                "forward": 0,
+                "right": 0,
+                "back": 0,
+                "left": 0.4
+            },
+            "action":
+            {
+                "rotation": 90,
+                "drive": 1,
+                "new_signal": [0.2, 0.2, 0.2],
+                "sleep": 0
+            }
+        },
+        {
+            "signal_set":
+            {
+                "forward": 0.8,
+                "right": 0,
+                "back": 0,
+                "left": 0
+            },
+            "action":
+            {
+                "rotation": 180,
+                "drive": 1,
+                "new_signal": [0.2, 0.2, 0.2],
+                "sleep": 0
+            }
+        },
+        {
+            "signal_set":
+            {
+                "forward": 0,
+                "right": 0.8,
+                "back": 0,
+                "left": 0
+            },
+            "action":
+            {
+                "rotation": 90,
+                "drive": 1,
+                "new_signal": [0.2, 0.2, 0.2],
+                "sleep": 0
+            }
+        },
+        {
+            "signal_set":
+            {
+                "forward": 0,
+                "right": 0,
+                "back": 0.8,
+                "left": 0
+            },
+            "action":
+            {
+                "rotation": 0,
+                "drive": 1,
+                "new_signal": [0.2, 0.2, 0.2],
+                "sleep": 0
+            }
+        },
+        {
+            "signal_set":
+            {
+                "forward": 0,
+                "right": 0,
+                "back": 0,
+                "left": 0.8
+            },
+            "action":
+            {
+                "rotation": -90,
+                "drive": 1,
+                "new_signal": [0.2, 0.2, 0.2],
+                "sleep": 0
+            }
+        },
+        {
+            "signal_set":
+            {
+                "forward": 0.8,
+                "right": 0.4,
+                "back": 0.4,
+                "left": 0.4
+            },
+            "action":
+            {
+                "rotation": 180,
+                "drive": 1,
+                "new_signal": [0.2, 0.2, 0.2],
+                "sleep": 0
+            }
+        },
+        {
+            "signal_set":
+            {
+                "forward": 0.4,
+                "right": 0.8,
+                "back": 0.4,
+                "left": 0.4
+            },
+            "action":
+            {
+                "rotation": 90,
+                "drive": 1,
+                "new_signal": [0.2, 0.2, 0.2],
+                "sleep": 0
+            }
+        },
+        {
+            "signal_set":
+            {
+                "forward": 0.4,
+                "right": 0.4,
+                "back": 0.8,
+                "left": 0.4
+            },
+            "action":
+            {
+                "rotation": 0,
+                "drive": 1,
+                "new_signal": [0.2, 0.2, 0.2],
+                "sleep": 0
+            }
+        },
+        {
+            "signal_set":
+            {
+                "forward": 0.4,
+                "right": 0.4,
+                "back": 0.4,
+                "left": 0.8
+            },
+            "action":
+            {
+                "rotation": -90,
+                "drive": 1,
+                "new_signal": [0.2, 0.2, 0.2],
+                "sleep": 0
+            }
+        }
+
+ 
+    ]
+}

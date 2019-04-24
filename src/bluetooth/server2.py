@@ -1,7 +1,7 @@
 import bluetooth
 
-hostMACAddress = 'whatever our mac is' # The MAC address of a Bluetooth adapter on the server. The server might have multiple Bluetooth adapters.
-port = 3
+hostMACAddress = 'B0:10:41:77:51:10' # The MAC address of a Bluetooth adapter on the server. The server might have multiple Bluetooth adapters.
+port = 3000
 backlog = 1
 size = 1024
 s = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
@@ -11,12 +11,9 @@ s.listen(backlog)
 
 try:
     client, clientInfo = s.accept()
-    simulation_time = client.recv(8)
-    while 1:
-        data = client.recv(size)
-        if data:
-            print(data)
-except: 
+    data = client.recv(size)
+    print(data)
+except:
     print("Closing socket")
     client.close()
     s.close()

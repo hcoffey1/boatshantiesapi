@@ -1,0 +1,1 @@
+ffmpeg -r 4 -i seeker_field/%04d.png -vcodec libx264 -crf 25 -pix_fmt yuv420p seeker_field.mp4
