@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# http://recolog.blogspot.com/2013/07/transferring-files-via-bluetooth-using.html
 # lightblue.sourceforge.net
 # sudo apt-get install python-bluez libbluetooth-dev python-dev
 # "                  " bluez
