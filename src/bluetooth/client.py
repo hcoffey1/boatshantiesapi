@@ -1,12 +1,19 @@
 import bluetooth
 
-serverMACAddress = '00:1f:e1:dd:08:3d'
+hostMACAddress = 'whatever out mac is' # The MAC address of a Bluetooth adapter on the server. The server might have multiple Bluetooth adapters.
 port = 3
+backlog = 1
+size = 1024
 s = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-s.connect((serverMACAddress, port))
-while 1:
-    text = raw_input() # Note change to the old (Python 2) raw_input
-    if text == "quit":
-    break
-    s.send(text)
-sock.close()
+s.bind((hostMACAddress, port))
+s.listen(backlog)
+try:
+    client, clientInfo = s.accept()
+    while 1:
+        data = client.recv(size)
+        if data:
+            print(data)
+except: 
+    print("Closing socket")
+    client.close()
+    s.close()
