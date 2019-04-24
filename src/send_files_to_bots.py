@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+# lightblue.sourceforge.net
+# sudo apt-get install python-bluez libbluetooth-dev python-dev
+# "                  " bluez
+# "                  " python-bluez libbluetooth-dev python-dev
+# sudo python setup.py install
 
 import bluetooth
 import lightblue
@@ -9,9 +14,7 @@ def main():
     target_names = [] #put bluetooth names
     file_to_send = "behavior.py"
 
-    port = None
     target_address = None
-
     nearby_devices = bluetooth.discover_devices()
 
     for target in target_names:
