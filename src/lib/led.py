@@ -4,7 +4,7 @@ import pins
 import RPi.GPIO as GPIO
 from enum import Enum
 
-class DIRECTION(Enum):
+class LED(Enum):
     '''
     Used to indicate which LED for usage
     '''
@@ -13,7 +13,7 @@ class DIRECTION(Enum):
     LEFT = 2
     RIGHT = 3
 
-class STATUS(Enum):
+class STATE(Enum):
     '''
     Pass to functions to turn LED on/off
     '''
@@ -29,34 +29,16 @@ def led_init():
     GPIO.setup(pins.LED_LEFT, GPIO.OUT, initial=GPIO.LOW)
     GPIO.setup(pins.LED_RIGHT, GPIO.OUT, initial=GPIO.LOW)
 
-def led_front(value):
+def led_toggle(led, state):
     '''
-    Write's value to front led pin
-    STATUS.ON   - Turns on the LED
-    STATUS.OFF  - Turns off the LED
+    Sets led to given state, i.e.
+    led_toggle(LED.FRONT, STATE.ON) #Sets front led to on
     '''
-    GPIO.output(pins.LED_FRONT, value)
-
-def led_back(value):
-    '''
-    Write's value to rear led pin
-    STATUS.ON   - Turns on the LED
-    STATUS.OFF  - Turns off the LED
-    '''
-    GPIO.output(pins.LED_BACK, value)
-
-def led_left(value):
-    '''
-    Write's value to left led pin
-    STATUS.ON   - Turns on the LED
-    STATUS.OFF  - Turns off the LED
-    '''
-    GPIO.output(pins.LED_LEFT, value)
-
-def led_right(value):
-    '''
-    Write's value to right led pin
-    STATUS.ON   - Turns on the LED
-    STATUS.OFF  - Turns off the LED
-    '''
-    GPIO.output(pins.LED_RIGHT, value)
+    if led == LED.FRONT:
+        GPIO.output(pins.LED_FRONT, value)
+    elif led == LED.BACK:
+        GPIO.output(pins.LED_BACK, value)
+    elif led == LED.LEFT:
+        GPIO.output(pins.LED_LEFT, value)
+    elif led == LED.RIGHT:
+        GPIO.output(pins.LED_RIGHT, value)
