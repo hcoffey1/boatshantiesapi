@@ -8,12 +8,11 @@
 
 import bluetooth
 import lightblue
-import socket
-
 
 def main():
     target_names = [] #put bluetooth names
     file_to_send = "behavior.py"
+    file_time = "time.txt"
 
     target_address = None
     nearby_devices = bluetooth.discover_devices()
@@ -34,7 +33,11 @@ def main():
         try:
             lightblue.obex.sendfile(target_address, service[1], file_to_send)
         except:
-            print("An error occured connecting to file")
+            print("An error occured sending process file")
+        try:
+            lightblue.obex.sendfile(target_address, service[1], file_time)
+        except:
+            print("An error occured sending time file")
 
 if __name__ == "__main__":
     exit(main())
