@@ -1,0 +1,69 @@
+{
+    "ruleset":
+    [
+        {
+            "signal_set":
+            {
+                "forward": 1,
+                "right": 0,
+                "back": 0,
+                "left": 0
+            },
+            "action":
+            {
+                "rotation": 0,
+                "drive": 1,
+                "new_signal": [0.2, 0.2, 0.2],
+                "sleep": 0
+            }
+        },
+        {
+            "signal_set":
+            {
+                "forward": 0,
+                "right": 1,
+                "back": 0,
+                "left": 0
+            },
+            "action":
+            {
+                "rotation": -90,
+                "drive": 1,
+                "new_signal": [0.2, 0.2, 0.2],
+                "sleep": 0
+            }
+        },
+        {
+            "signal_set":
+            {
+                "forward": 0,
+                "right": 0,
+                "back": 1,
+                "left": 0
+            },
+            "action":
+            {
+                "rotation": 180,
+                "drive": 1,
+                "new_signal": [0.2, 0.2, 0.2],
+                "sleep": 0
+            }
+        },
+        {
+            "signal_set":
+            {
+                "forward": 0,
+                "right": 0,
+                "back": 0,
+                "left": 1
+            },
+            "action":
+            {
+                "rotation": 90,
+                "drive": 1,
+                "new_signal": [0.2, 0.2, 0.2],
+                "sleep": 0
+            }
+        }
+    ]
+}
