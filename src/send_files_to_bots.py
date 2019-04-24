@@ -10,18 +10,19 @@ import bluetooth
 import lightblue
 
 def main():
-    target_names = [] #put bluetooth names
+    target_names = ["ACTUALLYNOTHING"] #put bluetooth names
     file_to_send = "behavior.py"
     file_time = "time.txt"
 
     target_address = None
     nearby_devices = bluetooth.discover_devices()
+    print(nearby_devices)
 
     # search might miss devices or be unable to connect, so it may need multiple attempts
     for target in target_names:
         for bdaddr in nearby_devices:
             if target_name == bluetooth.lookup_name(bdaddr):
-                print("found the device")
+                print("Found device " + target_name)
                 target_address = bdaddr
                 break
 
@@ -33,10 +34,12 @@ def main():
                     break
             try:
                 lightblue.obex.sendfile(target_address, service[1], file_to_send)
+                print("Sent process file")
             except:
                 print("An error occured sending process file")
             try:
                 lightblue.obex.sendfile(target_address, service[1], file_time)
+                print("Sent time file")
             except:
                 print("An error occured sending time file")
 
