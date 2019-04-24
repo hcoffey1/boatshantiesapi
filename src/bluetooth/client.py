@@ -17,10 +17,14 @@ for target in target_names:
     s = socket.socket(socket.AF_BLUETOOTH, socket.SOCK_STREAM, socket.BTPROTO_RFCOMM)
     s.connect((target[0], target[1]))
     while 1:
-        text = input()
-        if text == "quit":
-            break
-        s.send(bytes(text, 'UTF-8'))
+        try:
+            f = open(file_time, 'r')
+            file = f.read(8)
+            s.send(file)
+            f.close()
+            print("Sent time file")
+        except:
+            print("An error occured sending time file")
         try:
             f = open(file_to_send, 'r')
             file = f.read(1024)
@@ -31,14 +35,4 @@ for target in target_names:
             print("Sent process file")
         except:
             print("An error occured sending process file")
-        try:
-            f = open(file_time, 'r')
-            file = f.read(1024)
-            while file:
-                s.send(file)
-                file = f.read(1024)
-            f.close()
-            print("Sent time file")
-        except:
-            print("An error occured sending time file")
     s.close()
