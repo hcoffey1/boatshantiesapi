@@ -10,14 +10,11 @@ from time import sleep
 print('Hello World!')
 GPIO.setmode(GPIO.BCM)
 
-#led.led_init()
-#servo.servo_init()
+servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CW)
+servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CCW)
 
-servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CW, 1)
-servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CCW, 1)
-
-servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.CW, 1)
-servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.CCW, 1)
+servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.CW)
+servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.CCW )
 
 led.led_toggle(led.LED.FRONT, led.STATE.ON)
 sleep(1)
