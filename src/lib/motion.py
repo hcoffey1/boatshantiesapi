@@ -11,14 +11,14 @@ class MOVE(Enum):
     HALT = 4
 
 def toggle_direction(state):
-    if state == MOVE.FORWARD:
+    if state == MOVE.BACK:
         servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CCW)
         servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.CW)
-    elif state == MOVE.BACK:
+    elif state == MOVE.FORWARD:
         servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CW)
         servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.CCW)
     elif state == MOVE.RIGHT:
-        servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CCW)
+        servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CW)
         servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.HALT)
     elif state == MOVE.LEFT:
         servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.HALT)
