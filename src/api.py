@@ -31,11 +31,12 @@ def turn(angle=0):
     servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.HALT)
 
 def drive(distance=0):
-    servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CW)
-    servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.CCW)
-    time.sleep(1)
-    servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.HALT)
-    servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.HALT)
+    if distance > 0:
+        servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CW)
+        servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.CCW)
+        time.sleep(1)
+        servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.HALT)
+        servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.HALT)
 
 def change_signal(light_intensity=0):
     if light_intensity > 0.5:
