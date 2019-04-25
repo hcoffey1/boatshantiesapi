@@ -2,10 +2,10 @@ import bluetooth
 import sys
 
 port = 9998
-devices = bluetooth.discover_devices()
+devices = bluetooth.discover_devices(lookup_names=True)
 proc_list = []
-for addr in devices:
-    print(addr)
+for addr,name in devices:
+    print(addr + " - " + name)
     s = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
     try:
         s.connect((addr, port))
