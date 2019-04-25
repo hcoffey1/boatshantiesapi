@@ -14,7 +14,7 @@ s.bind(("", port))
 s.listen(backlog)
 
 def child():
-    exec(open(SIM_SCRIPT).read())
+    subprocess.run([SIM_SCRIPT, SIM_FILE])
     return
 
 def reset_bluetooth():
