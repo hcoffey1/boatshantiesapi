@@ -23,9 +23,9 @@ def main():
     p.start()
     os.system(BT_RESET)
     while 1:
+        os.system(BT_RESET)
         client = s.accept()[0]
 
-        os.system(BT_RESET)
         p.terminate()
         with open(SIM_FILE, 'w+') as f:
             f.truncate()
