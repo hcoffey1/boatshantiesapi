@@ -13,6 +13,8 @@ s.listen(backlog)
 
 def child():
     print("Hes going to fucking destroy me!")
+    while 1:
+        continue
     return
 
 def main():
