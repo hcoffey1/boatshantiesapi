@@ -18,11 +18,16 @@ def child():
         continue
     return
 
-def main():
-    p = Process(target = child)
-    p.start()
+def reset_bluetooth():
     while 1:
         os.system(BT_RESET)
+
+def main():
+    p = Process(target = child)
+    reset_bt = Process(target = reset_bluetooth)
+    reset_bt.start()
+    p.start()
+    while 1:
         client = s.accept()[0]
 
         p.terminate()
