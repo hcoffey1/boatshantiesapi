@@ -7,7 +7,10 @@ proc_list = []
 for addr in devices:
     print(addr)
     s = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-    s.connect((addr, port))
+    try:
+        s.connect((addr, port))
+    except:
+        continue
     filename = sys.argv[1]
     with open(filename, 'r') as f:
         buf = f.read().encode('utf-8')
