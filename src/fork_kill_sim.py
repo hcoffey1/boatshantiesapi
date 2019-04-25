@@ -7,15 +7,14 @@ port = 9998
 backlog = 1
 size = 1024
 SIM_FILE="/tmp/sim.json"
+SIM_SCRIPT="./motorsensory_loop.py"
 BT_RESET = "echo -n \'discoverable on\' | sudo bluetoothctl > /dev/null 2> /dev/null"
 s = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
 s.bind(("", port))
 s.listen(backlog)
 
 def child():
-    print("Hes going to fucking destroy me!")
-    while 1:
-        continue
+    exec(open(SIM_SCRIPT).read())
     return
 
 def reset_bluetooth():
