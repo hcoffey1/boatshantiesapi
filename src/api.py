@@ -1,24 +1,39 @@
-from lib import led
+from lib import led, servo, sensors
 import time
 
 
 def get_front_sensor():
-    return 0
+    return sensors.front_value()
 
 def get_left_sensor():
-    return 0
+    return sensors.left_value()
 
 def get_right_sensor():
-    return 0
+    return sensors.right_value()
 
 def get_back_sensor():
-    return 0
+    return sensors.back_value()
 
 def turn(angle=0):
-    pass
+    if angle == 0:
+        return
+    if angle > 0:
+        # We want to turn CCW
+        servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CCW)
+        servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.CCW)
+    elif angle < 0:
+        servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CW)
+        servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.CW)
+    time.sleep(1)
+    servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.HALT)
+    servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.HALT)
 
 def drive(distance=0):
-    pass
+    servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CW)
+    servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.CCW)
+    time.sleep(1)
+    servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.HALT)
+    servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.HALT)
 
 def change_signal(light_intensity=0):
     if light_intensity > 0.5:
