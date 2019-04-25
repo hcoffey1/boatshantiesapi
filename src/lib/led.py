@@ -20,8 +20,6 @@ class STATE(Enum):
     '''
     Pass to functions to turn LED on/off
     '''
-    #ON = GPIO.HIGH
-    #OFF = GPIO.LOW
     ON = BRIGHTNESS
     OFF = 0
 
@@ -54,8 +52,3 @@ def led_toggle(led, state):
         LL_PWM.ChangeDutyCycle(state.value)
     elif led == LED.RIGHT:
         LR_PWM.ChangeDutyCycle(state.value)
-
-    #p = GPIO.PWM(led.value, 100)
-    #p.start(0)
-    #p.ChangeDutyCycle(BRIGHTNESS)
-    #GPIO.output(led.value, state.value)
