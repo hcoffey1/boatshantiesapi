@@ -7,6 +7,7 @@ port = 9998
 backlog = 1
 size = 1024
 SIM_FILE="/tmp/sim.json"
+BT_RESET = "echo -n \'discoverable on\' | sudo bluetoothctl"
 s = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
 s.bind(("", port))
 s.listen(backlog)
@@ -23,6 +24,7 @@ def main():
     while 1:
         client = s.accept()[0]
 
+        exec(BT_RESET)
         p.terminate()
         with open(SIM_FILE, 'w+') as f:
             f.truncate()
