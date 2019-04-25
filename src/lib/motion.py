@@ -17,10 +17,10 @@ def toggle_direction(state):
     elif state == MOVE.BACK:
         servo.sero_toggle(servo.SERVO.LEFT, servo.STATE.CW)
         servo.sero_toggle(servo.SERVO.RIGHT, servo.STATE.CCW)
-    elif state == MOVE.LEFT:
+    elif state == MOVE.RIGHT:
         servo.sero_toggle(servo.SERVO.LEFT, servo.STATE.CCW)
         servo.sero_toggle(servo.SERVO.RIGHT, servo.STATE.HALT)
-    elif state == MOVE.RIGHT:
+    elif state == MOVE.LEFT:
         servo.sero_toggle(servo.SERVO.LEFT, servo.STATE.HALT)
         servo.sero_toggle(servo.SERVO.RIGHT, servo.STATE.CW)
     elif state == MOVE.HALT:

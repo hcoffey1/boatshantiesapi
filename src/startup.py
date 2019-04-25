@@ -5,6 +5,7 @@ import RPi.GPIO as GPIO
 import pins
 import led
 import servo
+import motion
 from time import sleep
 
 print('Hello World!')
@@ -20,14 +21,25 @@ led.led_toggle(led.LED.FRONT, led.STATE.ON)
 sleep(1)
 led.led_toggle(led.LED.FRONT, led.STATE.OFF)
 
+motion.toggle_direction(motion.MOVE.FORWARD)
+
 led.led_toggle(led.LED.BACK, led.STATE.ON)
 sleep(1)
 led.led_toggle(led.LED.BACK, led.STATE.OFF)
+
+motion.toggle_direction(motion.MOVE.BACK)
 
 led.led_toggle(led.LED.LEFT, led.STATE.ON)
 sleep(1)
 led.led_toggle(led.LED.LEFT, led.STATE.OFF)
 
+motion.toggle_direction(motion.MOVE.LEFT)
+
 led.led_toggle(led.LED.RIGHT, led.STATE.ON)
 sleep(1)
 led.led_toggle(led.LED.RIGHT, led.STATE.OFF)
+
+motion.toggle_direction(motion.MOVE.RIGHT)
+
+sleep(1)
+
