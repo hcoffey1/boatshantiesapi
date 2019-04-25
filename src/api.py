@@ -1,5 +1,7 @@
-from lib import led, servo, sensors
 import time
+import sys
+sys.path.append("lib")
+import led, servo, sensors
 
 
 def get_front_sensor():
@@ -37,15 +39,15 @@ def drive(distance=0):
 
 def change_signal(light_intensity=0):
     if light_intensity > 0.5:
-        led_toggle(LED.FRONT, STATE.ON)
-        led_toggle(LED.BACK, STATE.ON)
-        led_toggle(LED.LEFT, STATE.ON)
-        led_toggle(LED.RIGHT, STATE.ON)
+        led.led_toggle(led.LED.FRONT, led.STATE.ON)
+        led.led_toggle(led.LED.BACK, led.STATE.ON)
+        led.led_toggle(led.LED.LEFT, led.STATE.ON)
+        led.led_toggle(led.LED.RIGHT, led.STATE.ON)
     else:
-        led_toggle(LED.FRONT, STATE.OFF)
-        led_toggle(LED.BACK, STATE.OFF)
-        led_toggle(LED.LEFT, STATE.OFF)
-        led_toggle(LED.RIGHT, STATE.OFF)
+        led.led_toggle(led.LED.FRONT, led.STATE.OFF)
+        led.led_toggle(led.LED.BACK, led.STATE.OFF)
+        led.led_toggle(led.LED.LEFT, led.STATE.OFF)
+        led.led_toggle(led.LED.RIGHT, led.STATE.OFF)
 
 def sleep(sleep_time=0):
     time.sleep(sleep_time)
