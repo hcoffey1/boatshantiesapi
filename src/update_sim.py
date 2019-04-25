@@ -10,6 +10,7 @@ for addr in devices:
     try:
         s.connect((addr, port))
     except:
+        print("couldn't connect to " + addr)
         continue
     filename = sys.argv[1]
     with open(filename, 'r') as f:
