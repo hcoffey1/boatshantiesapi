@@ -15,6 +15,7 @@ class SERVO(Enum):
 class STATE(Enum):
     CW = 1
     CCW = 20
+    HALT = 0
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(pins.SERVO_1, GPIO.OUT)
@@ -26,13 +27,8 @@ S2_PWM = GPIO.PWM(SERVO.RIGHT.value, 100)
 S1_PWM.start(0)
 S2_PWM.start(0)
 
-def servo_toggle(servo, state, length):
-    if servo == LEFT:
+def servo_toggle(servo, state):
+    if servo == SERVO.LEFT:
         S1_PWM.ChangeDutyCycle(state.value)
-    elif servo == RIGHT:
+    elif servo == SERVO.RIGHT:
         S2_PWM.ChangeDutyCycle(state.value)
-
-    #p = GPIO.PWM(servo.value, 100)
-    #p.start(0)
-    #p.ChangeDutyCycle(state.value)
-    #sleep(length)
