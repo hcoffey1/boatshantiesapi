@@ -12,18 +12,18 @@ class MOVE(Enum):
 
 def toggle_direction(state):
     if state == MOVE.FORWARD:
-        servo.sero_toggle(servo.SERVO.LEFT, servo.STATE.CCW)
-        servo.sero_toggle(servo.SERVO.RIGHT, servo.STATE.CW)
+        servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CCW)
+        servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.CW)
     elif state == MOVE.BACK:
-        servo.sero_toggle(servo.SERVO.LEFT, servo.STATE.CW)
-        servo.sero_toggle(servo.SERVO.RIGHT, servo.STATE.CCW)
+        servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CW)
+        servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.CCW)
     elif state == MOVE.RIGHT:
-        servo.sero_toggle(servo.SERVO.LEFT, servo.STATE.CCW)
-        servo.sero_toggle(servo.SERVO.RIGHT, servo.STATE.HALT)
+        servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CCW)
+        servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.HALT)
     elif state == MOVE.LEFT:
-        servo.sero_toggle(servo.SERVO.LEFT, servo.STATE.HALT)
-        servo.sero_toggle(servo.SERVO.RIGHT, servo.STATE.CW)
+        servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.HALT)
+        servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.CCW)
     elif state == MOVE.HALT:
-        servo.sero_toggle(servo.SERVO.LEFT, servo.STATE.HALT)
-        servo.sero_toggle(servo.SERVO.RIGHT, servo.STATE.HALT)
+        servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.HALT)
+        servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.HALT)
 
