@@ -14,26 +14,23 @@ class PHOTO(Enum):
     LEFT = pins.PHOTO_LEFT
     RIGHT = pins.PHOTO_RIGHT
 
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(pins.PHOTO_FRONT, GPIO.IN)
+GPIO.setup(pins.PHOTO_BACK, GPIO.IN)
+GPIO.setup(pins.PHOTO_LEFT, GPIO.IN)
+GPIO.setup(pins.PHOTO_RIGHT, GPIO.IN)
+
 '''
 returns the current values for the given pins
 '''
 def front_value():
-    return GPIO.input(PHOTO.FRONT)
+    return GPIO.input(PHOTO.FRONT.value)
 
 def back_value():
-    return GPIO.input(PHOTO.BACK)
+    return GPIO.input(PHOTO.BACK.value)
 
 def left_value():
-    return GPIO.input(PHOTO.LEFT)
+    return GPIO.input(PHOTO.LEFT.value)
 
 def right_value():
-    return GPIO.input(PHOTO.RIGHT)
-
-def photo_init():
-    '''
-    Initialize's phototransistor pins for usage.
-    '''
-    GPIO.setup(pins.PHOTO_FRONT, GPIO.IN)
-    GPIO.setup(pins.PHOTO_BACK, GPIO.IN)
-    GPIO.setup(pins.PHOTO_LEFT, GPIO.IN)
-    GPIO.setup(pins.PHOTO_RIGHT, GPIO.IN)
+    return GPIO.input(PHOTO.RIGHT.value)
