@@ -21,7 +21,6 @@ def child():
 def main():
     p = Process(target = child)
     p.start()
-    os.system(BT_RESET)
     while 1:
         os.system(BT_RESET)
         client = s.accept()[0]
