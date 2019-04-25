@@ -34,4 +34,4 @@ def led_toggle(led, state):
     Sets led to given state, i.e.
     led_toggle(LED.FRONT, STATE.ON) #Sets front led to on
     '''
-    GPIO.output(led, state)
+    GPIO.output(led.value, state.value)

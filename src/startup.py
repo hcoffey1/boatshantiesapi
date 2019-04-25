@@ -14,3 +14,15 @@ led.led_init()
 led.led_toggle(led.LED.FRONT, led.STATE.ON)
 sleep(1)
 led.led_toggle(led.LED.FRONT, led.STATE.OFF)
+
+led.led_toggle(led.LED.BACK, led.STATE.ON)
+sleep(1)
+led.led_toggle(led.LED.BACK, led.STATE.OFF)
+
+led.led_toggle(led.LED.LEFT, led.STATE.ON)
+sleep(1)
+led.led_toggle(led.LED.LEFT, led.STATE.OFF)
+
+led.led_toggle(led.LED.RIGHT, led.STATE.ON)
+sleep(1)
+led.led_toggle(led.LED.RIGHT, led.STATE.OFF)
