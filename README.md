@@ -23,5 +23,5 @@ Programming interface for boatshanties microbots.
 
 * PHOTO_FRONT = 24;   #GPIO 24 (Pin 18)
 * PHOTO_BACK  = 25;   #GPIO 25 (Pin 22)
-* PHOTO_LEFT  = 5;    #GPIO 5 (Pin 29)
-* PHOTO_RIGHT = 6;    #GPIO 6 (Pin 31)
+* PHOTO_LEFT  = 8;    #GPIO 8 (Pin 24)
+* PHOTO_RIGHT = 7;    #GPIO 7 (Pin 26)
