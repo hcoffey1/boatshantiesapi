@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 sys.path.append('./lib')
+sys.path.append('/home/pi/boatshantiesapi/src/lib/')
 import RPi.GPIO as GPIO
 import pins
 import led
@@ -9,7 +10,6 @@ import motion
 from time import sleep
 
 print('Hello World!')
-#GPIO.setmode(GPIO.BCM)
 
 servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CW)
 servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CCW)
