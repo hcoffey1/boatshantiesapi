@@ -4,6 +4,9 @@ import pins
 import RPi.GPIO as GPIO
 from enum import Enum
 
+#PWM Value for LED's
+BRIGHTNESS = 30
+
 class LED(Enum):
     '''
     Used to indicate which LED for usage
@@ -34,4 +37,7 @@ def led_toggle(led, state):
     Sets led to given state, i.e.
     led_toggle(LED.FRONT, STATE.ON) #Sets front led to on
     '''
-    GPIO.output(led.value, state.value)
+    p = GPIO.PWM(led.value, 100)
+    p.start(0)
+    p.ChangeDutyCycle(BRIGHTNESS)
+    #GPIO.output(led.value, state.value)
