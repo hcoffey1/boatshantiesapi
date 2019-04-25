@@ -23,19 +23,11 @@ class STATE(Enum):
     ON = GPIO.HIGH
     OFF = GPIO.LOW
 
+GPIO.setmode(GPIO.BCM)
 GPIO.setup(pins.LED_FRONT, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(pins.LED_BACK, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(pins.LED_LEFT, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(pins.LED_RIGHT, GPIO.OUT, initial=GPIO.LOW)
-
-#def led_init():
-#    '''
-#    Initialize's led pins for usage. 
-#    '''
-#    GPIO.setup(pins.LED_FRONT, GPIO.OUT, initial=GPIO.LOW)
-#    GPIO.setup(pins.LED_BACK, GPIO.OUT, initial=GPIO.LOW)
-    #GPIO.setup(pins.LED_LEFT, GPIO.OUT, initial=GPIO.LOW)
-    #GPIO.setup(pins.LED_RIGHT, GPIO.OUT, initial=GPIO.LOW)
 
 def led_toggle(led, state):
     '''

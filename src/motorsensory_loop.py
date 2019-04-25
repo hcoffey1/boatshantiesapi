@@ -18,7 +18,7 @@ def perform_action(action:Action):
     api.turn(action.rotation)
     api.drive(action.drive)
     api.sleep(action.sleep)
-    api.change_signal(action.new_signal)
+    api.change_signal(action.new_signal.total())
 
 if __name__ == "__main__":
     path_to_instruction_set = sys.argv[1]
