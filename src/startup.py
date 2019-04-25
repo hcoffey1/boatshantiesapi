@@ -10,9 +10,6 @@ from time import sleep
 print('Hello World!')
 GPIO.setmode(GPIO.BCM)
 
-#led.led_init()
-#servo.servo_init()
-
 servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CW, 1)
 servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CCW, 1)
 
