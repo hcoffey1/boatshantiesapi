@@ -9,6 +9,7 @@ import servo
 import motion
 from time import sleep
 
+#This is a test script used to run through some basic commands on the bot
 print('Hello World!')
 
 led.led_toggle(led.LED.FRONT, led.STATE.ON)

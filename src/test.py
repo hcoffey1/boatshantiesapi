@@ -9,6 +9,7 @@ import servo
 import motion
 from time import sleep
 
+#This is a test script used to verify the device is configured properly
 print('Hello World!')
 
 servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CW)

@@ -11,6 +11,9 @@ class MOVE(Enum):
     HALT = 4
 
 def toggle_direction(state):
+    """
+    Instructs bot to move in given direction until halted.
+    """
     if state == MOVE.BACK:
         servo.servo_toggle(servo.SERVO.LEFT, servo.STATE.CCW)
         servo.servo_toggle(servo.SERVO.RIGHT, servo.STATE.CW)

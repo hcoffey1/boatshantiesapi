@@ -20,9 +20,7 @@ GPIO.setup(pins.PHOTO_BACK, GPIO.IN)
 GPIO.setup(pins.PHOTO_LEFT, GPIO.IN)
 GPIO.setup(pins.PHOTO_RIGHT, GPIO.IN)
 
-'''
-returns the current values for the given pins
-'''
+#Returns the current values for the given pins
 def front_value():
     return GPIO.input(PHOTO.FRONT.value)
 
